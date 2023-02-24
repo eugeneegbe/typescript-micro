@@ -1,4 +1,5 @@
 import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
 // will hold our documents invoice/expense
 let docs = [];
 // Reference to the form 
@@ -16,6 +17,7 @@ form.addEventListener('submit', (e) => {
         docs.push(invoice);
     }
     else {
-        // create expense object here and add to document list
+        let expense = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+        docs.push(expense);
     }
 });
